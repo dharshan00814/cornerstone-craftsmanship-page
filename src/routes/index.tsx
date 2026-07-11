@@ -54,12 +54,6 @@ import {
 } from "@/components/ui/accordion";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { property: "og:image", content: "/og-image.jpg" },
-      { name: "twitter:image", content: "/og-image.jpg" },
-    ],
-  }),
   component: Index,
 });
 

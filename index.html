@@ -144,20 +144,27 @@
       letter-spacing: -0.01em;
     }
 
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 15px;
-      font-weight: 800;
-      box-shadow: 0 0 14px rgba(255,255,255,0.08);
-      flex-shrink: 0;
-    }
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 
     .logo small {
       display: block;
@@ -677,7 +684,11 @@ text-transform: capitalize;
   <header id="site-header">
     <nav class="container">
       <div class="logo">
-        <div class="logo-mark">H</div>
+        <div class="logo-mark">
+          <img src="./hyna-logo-new.png" alt="Hyna Studio Logo">
+        </div>
+
+        </div>
         <div>
           Hyna Community
           <small>by Hyna Studio</small>
@@ -719,7 +730,7 @@ text-transform: capitalize;
     <canvas id="network-canvas"></canvas>
     <div class="hero-grid-overlay"></div>
     <div class="container hero-content">
-      <div class="eyebrow">India's Student Innovation Network</div>
+      
       <h1 id="hero-heading">
         <span class="word"><span>Building Together, Growing Together</span></span>
         <span class="word "><span>Build.</span></span>

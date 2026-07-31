@@ -1164,6 +1164,64 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+.discord-section{
+    position: relative;
+    overflow: hidden;
+}
+
+/* Corner Images */
+.discord-corner{
+    position:absolute;
+    top:-40px;
+    width:320px;
+    max-width:28vw;
+    opacity:.9;
+    pointer-events:none;
+    user-select:none;
+    z-index:1;
+    filter:
+        drop-shadow(0 0 40px rgba(114,137,218,.45));
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(var(--angle));
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.05) rotate(var(--angle));
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(var(--angle));
+  }
+}
+
+.discord-corner-left{
+   position: absolute;
+  top: -10px;
+  animation: popUp 1.2s ease-out forwards;
+}
+
+.discord-corner-right {
+  position: absolute;
+  top: 0;
+  animation: popUp 1.2s ease-out forwards;
+}
+
+/* Left corner */
+.discord-corner-left {
+  left: 10px;
+  --angle: -8deg;
+}
+
+/* Right corner */
+.discord-corner-right {
+  right: -60px;
+  --angle: 8deg;
+  transform: scaleX(-1);
+}
 
     .discord-secondary-link {
       color: rgba(255,255,255,0.45);
@@ -1213,6 +1271,22 @@
       color: rgba(255,255,255,0.4);
       line-height: 1.5;
     }
+    @media (max-width:768px){
+
+    .discord-corner{
+        width:160px;
+        top:-15px;
+    }
+
+    .discord-corner-left{
+        left:-35px;
+    }
+
+    .discord-corner-right{
+        right:-35px;
+    }
+
+}
 
     @media (max-width: 768px) {
       .discord-channels { grid-template-columns: 1fr 1fr; }
@@ -1341,6 +1415,14 @@
 
   <!-- ===== DISCORD SECTION ===== -->
   <section class="discord-section" id="community">
+    <!-- Decorative Top Images -->
+<img src="./ChatGPT Image Jul 31, 2026, 01_41_15 PM.png"
+     alt="discord"
+     class="discord-corner discord-corner-left">
+
+<img src="./ChatGPT Image Jul 31, 2026, 01_46_09 PM.png"
+     alt="discord"
+     class="discord-corner discord-corner-right">
     <div class="discord-orb discord-orb-1"></div>
     <div class="discord-orb discord-orb-2"></div>
     <div class="discord-orb discord-orb-3"></div>
@@ -1482,7 +1564,7 @@
 
         </p>
 
-        <a href="#register" class="register-btn">
+        <a href="./hack.html" class="register-btn">
 
             Register Now
 

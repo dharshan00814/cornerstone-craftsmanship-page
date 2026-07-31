@@ -335,6 +335,201 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
+font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(255,255,255,0.08);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+    .logo small {
+      display: block;
+      font-family: var(--font-mono);
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: color .2s ease, background .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text);
+      background: var(--card);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all .2s ease;
+    }
+
+    .icon-btn:hover {
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .btn-primary {
+      background: #ffffff;
+      color: #000000;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(255,255,255,0.08);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+      background: #f0f0f0;
+    }
+
+    .btn-ghost {
+      background: var(--card);
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-ghost:hover {
+      background: var(--card-hover);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .mobile-toggle span,
+    .mobile-toggle span::before,
+    .mobile-toggle span::after {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--text);
+      position: relative;
+      transition: all .25s ease;
+    }
+
+    .mobile-toggle span::before {
+      position: absolute;
+      top: -5px;
+    }
+
+    .mobile-toggle span::after {
+      position: absolute;
+      top: 5px;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.97);
+      backdrop-filter: blur(20px);
+      z-index: 190;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transform: translateY(-100%);
+      transition: transform .4s cubic-bezier(.65, 0, .35, 1);
+    }
+
+    .mobile-menu.open {
+      transform: translateY(0);
+    }
+
+    .mobile-menu a {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      padding: 12px 0;
+      color: var(--text);
+    }
+
+    .mobile-menu .btn {
+      margin-top: 20px;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       padding-top: 120px;
       padding-bottom: 80px;
       overflow: hidden;
@@ -344,8 +539,8 @@
       position: fixed;
       inset: 0;
       z-index: 0;
-      opacity: 0.9;
-      pointer-events: none;
+      opacity: 1;
+      cursor: crosshair;
     }
 
     .hero::before {
@@ -802,20 +997,21 @@ text-transform: capitalize;
       mobileMenu.classList.toggle('open');
     });
     mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
     // ---------- Theme toggle (visual only, dark-first design) ----------
     const themeToggle = document.getElementById('theme-toggle');
-    let isLight = false;
-    themeToggle.addEventListener('click', () => {
-      isLight = !isLight;
-      document.documentElement.style.setProperty('--bg', isLight ? '#F8FAFC' : '#050816');
-      document.documentElement.style.setProperty('--surface', isLight ? '#EEF2FF' : '#0F172A');
-      document.documentElement.style.setProperty('--text', isLight ? '#0F172A' : '#FFFFFF');
-      document.documentElement.style.setProperty('--card', isLight ? 'rgba(15,23,42,0.05)' : 'rgba(255,255,255,0.08)');
-      document.documentElement.style.setProperty('--card-hover', isLight ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.12)');
-      document.documentElement.style.setProperty('--border', isLight ? 'rgba(15,23,42,0.12)' : 'rgba(255,255,255,0.1)');
-      document.documentElement.style.setProperty('--muted', isLight ? '#475569' : '#94A3B8');
-    });
+    if (themeToggle) {
+      let isLight = false;
+      themeToggle.addEventListener('click', () => {
+        isLight = !isLight;
+        document.documentElement.style.setProperty('--bg', isLight ? '#F8FAFC' : '#050816');
+        document.documentElement.style.setProperty('--surface', isLight ? '#EEF2FF' : '#0F172A');
+        document.documentElement.style.setProperty('--text', isLight ? '#0F172A' : '#FFFFFF');
+        document.documentElement.style.setProperty('--card', isLight ? 'rgba(15,23,42,0.05)' : 'rgba(255,255,255,0.08)');
+        document.documentElement.style.setProperty('--card-hover', isLight ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.12)');
+        document.documentElement.style.setProperty('--border', isLight ? 'rgba(15,23,42,0.12)' : 'rgba(255,255,255,0.1)');
+        document.documentElement.style.setProperty('--muted', isLight ? '#475569' : '#94A3B8');
+      });
+    }
 
     // ---------- Hero text reveal ----------
     gsap.registerPlugin(ScrollTrigger);
@@ -912,30 +1108,30 @@ text-transform: capitalize;
 
       const PARTICLE_DENSITY = 0.00015;
       const BG_PARTICLE_DENSITY = 0.00005;
-      const MOUSE_RADIUS = 180;
+      const MOUSE_RADIUS = 200;
       const RETURN_SPEED = 0.08;
       const DAMPING = 0.90;
-      const REPULSION_STRENGTH = 1.2;
+      const REPULSION_STRENGTH = 1.4;
 
       const randomRange = (min, max) => Math.random() * (max - min) + min;
 
       let particles = [];
       let backgroundParticles = [];
       let mouse = { x: -1000, y: -1000, isActive: false };
+      let frameId = null;
 
-      // Black & white theme — white/grey particles only
       function initParticles(width, height) {
         const particleCount = Math.floor(width * height * PARTICLE_DENSITY);
         particles = [];
         for (let i = 0; i < particleCount; i++) {
           const x = Math.random() * width;
           const y = Math.random() * height;
-          // All particles white, varying sizes for depth effect
+          const isAccent = Math.random() > 0.90;
           particles.push({
-            x: x, y: y, originX: x, originY: y,
+            x, y, originX: x, originY: y,
             vx: 0, vy: 0,
-            size: randomRange(0.8, 2.2),
-            color: '#ffffff',
+            size: randomRange(0.8, 2.4),
+            isAccent,
             angle: Math.random() * Math.PI * 2
           });
         }
@@ -948,8 +1144,8 @@ text-transform: capitalize;
             y: Math.random() * height,
             vx: (Math.random() - 0.5) * 0.2,
             vy: (Math.random() - 0.5) * 0.2,
-            size: randomRange(0.5, 1.5),
-            alpha: randomRange(0.1, 0.4),
+            size: randomRange(0.4, 1.4),
+            alpha: randomRange(0.08, 0.35),
             phase: Math.random() * Math.PI * 2
           });
         }
@@ -963,6 +1159,7 @@ text-transform: capitalize;
         canvas.height = height * dpr;
         canvas.style.width = width + 'px';
         canvas.style.height = height + 'px';
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.scale(dpr, dpr);
         initParticles(width, height);
       }
@@ -973,11 +1170,16 @@ text-transform: capitalize;
 
         ctx.clearRect(0, 0, width, height);
 
-        // No glow overlay — pure black background from body
-        // The canvas only draws particles on top of the black body background
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const pulseOpacity = Math.sin(time * 0.0008) * 0.04 + 0.07;
+        const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(width, height) * 0.65);
+        glow.addColorStop(0, `rgba(255, 255, 255, ${pulseOpacity * 0.6})`);
+        glow.addColorStop(0.4, `rgba(180, 200, 255, ${pulseOpacity * 0.3})`);
+        glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+        ctx.fillStyle = glow;
+        ctx.fillRect(0, 0, width, height);
 
-        // 2. Background Particles (Drifting Stars — white/grey only)
-        ctx.fillStyle = "#ffffff";
         for (let i = 0; i < backgroundParticles.length; i++) {
           const p = backgroundParticles[i];
           p.x += p.vx;
@@ -990,29 +1192,27 @@ text-transform: capitalize;
           const twinkle = Math.sin(time * 0.002 + p.phase) * 0.5 + 0.5;
           const currentAlpha = p.alpha * (0.3 + 0.7 * twinkle);
 
-          // White stars with subtle twinkling alpha
-          ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`;
-          ctx.globalAlpha = 1.0;
+          ctx.globalAlpha = currentAlpha;
+          ctx.fillStyle = '#ffffff';
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
           ctx.fill();
         }
         ctx.globalAlpha = 1.0;
 
-        // 3. Main Foreground Physics (Mouse & Spring Forces)
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           const dx = mouse.x - p.x;
           const dy = mouse.y - p.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (mouse.isActive && distance < MOUSE_RADIUS) {
+          if (mouse.isActive && distance < MOUSE_RADIUS && distance > 0.5) {
             const forceDirectionX = dx / distance;
             const forceDirectionY = dy / distance;
             const force = (MOUSE_RADIUS - distance) / MOUSE_RADIUS;
             const repulsion = force * REPULSION_STRENGTH;
-            p.vx -= forceDirectionX * repulsion * 5;
-            p.vy -= forceDirectionY * repulsion * 5;
+            p.vx -= forceDirectionX * repulsion * 6;
+            p.vy -= forceDirectionY * repulsion * 6;
           }
 
           const springDx = p.originX - p.x;
@@ -1021,7 +1221,6 @@ text-transform: capitalize;
           p.vy += springDy * RETURN_SPEED;
         }
 
-        // Phase 2: Collisions
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const p1 = particles[i];
@@ -1037,11 +1236,11 @@ text-transform: capitalize;
                 const nx = dx / dist;
                 const ny = dy / dist;
                 const overlap = minDist - dist;
-                const pushX = nx * overlap * 0.5;
-                const pushY = ny * overlap * 0.5;
 
-                p1.x -= pushX; p1.y -= pushY;
-                p2.x += pushX; p2.y += pushY;
+                p1.x -= nx * overlap * 0.5;
+                p1.y -= ny * overlap * 0.5;
+                p2.x += nx * overlap * 0.5;
+                p2.y += ny * overlap * 0.5;
 
                 const dvx = p1.vx - p2.vx;
                 const dvy = p1.vy - p2.vy;
@@ -1051,21 +1250,18 @@ text-transform: capitalize;
                   const m1 = p1.size;
                   const m2 = p2.size;
                   const restitution = 0.85;
-                  const impulseMagnitude = (-(1 + restitution) * velocityAlongNormal) / (1 / m1 + 1 / m2);
-                  const impulseX = impulseMagnitude * nx;
-                  const impulseY = impulseMagnitude * ny;
+                  const impulse = (-(1 + restitution) * velocityAlongNormal) / (1 / m1 + 1 / m2);
 
-                  p1.vx += impulseX / m1;
-                  p1.vy += impulseY / m1;
-                  p2.vx -= impulseX / m2;
-                  p2.vy -= impulseY / m2;
+                  p1.vx += (impulse * nx) / m1;
+                  p1.vy += (impulse * ny) / m1;
+                  p2.vx -= (impulse * nx) / m2;
+                  p2.vy -= (impulse * ny) / m2;
                 }
               }
             }
           }
         }
 
-        // Phase 3: Integration & Drawing
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           p.vx *= DAMPING;
@@ -1073,31 +1269,62 @@ text-transform: capitalize;
           p.x += p.vx;
           p.y += p.vy;
 
+          const velocity = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+          const opacity = Math.min(0.25 + velocity * 0.12, 1);
+
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
 
-          const velocity = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-          const opacity = Math.min(0.2 + velocity * 0.12, 1);
-          // Pure white particles with velocity-based brightness
-          ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          if (p.isAccent) {
+            ctx.fillStyle = `rgba(180, 210, 255, ${Math.min(opacity + 0.15, 1)})`;
+          } else {
+            ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+          }
           ctx.fill();
         }
 
-        requestAnimationFrame(animate);
+        if (mouse.isActive) {
+          const ringOpacity = 0.06 + Math.sin(time * 0.004) * 0.03;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, MOUSE_RADIUS, 0, Math.PI * 2);
+          ctx.strokeStyle = `rgba(255, 255, 255, ${ringOpacity})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+
+        frameId = requestAnimationFrame(animate);
       }
 
-      window.addEventListener('resize', resize);
+      window.addEventListener('resize', () => {
+        if (frameId) cancelAnimationFrame(frameId);
+        resize();
+        frameId = requestAnimationFrame(animate);
+      });
+
       window.addEventListener('mousemove', e => {
         mouse.x = e.clientX;
         mouse.y = e.clientY;
         mouse.isActive = true;
       });
-      window.addEventListener('mouseleave', () => {
+
+      document.addEventListener('mouseleave', () => {
         mouse.isActive = false;
       });
 
+      window.addEventListener('touchmove', e => {
+        if (e.touches.length > 0) {
+          mouse.x = e.touches[0].clientX;
+          mouse.y = e.touches[0].clientY;
+          mouse.isActive = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        mouse.isActive = false;
+      }, { passive: true });
+
       resize();
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
     })();
   </script>
 

@@ -1825,15 +1825,6 @@
           ctx.fill();
         }
 
-        if (mouse.isActive) {
-          const ringOpacity = 0.06 + Math.sin(time * 0.004) * 0.03;
-          ctx.beginPath();
-          ctx.arc(mouse.x, mouse.y, MOUSE_RADIUS, 0, Math.PI * 2);
-          ctx.strokeStyle = `rgba(255, 255, 255, ${ringOpacity})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-
         frameId = requestAnimationFrame(animate);
       }
 

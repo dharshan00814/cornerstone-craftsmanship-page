@@ -49,7 +49,6 @@
     }
 
     body {
-      background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
       overflow-x: hidden;
@@ -486,11 +485,6 @@
       transform: translateZ(0);
     }
 
-    .tech-marquee-track {
-      will-change: transform;
-      transform: translateZ(0);
-    }
-
     .process-card,
     .team-card {
       will-change: transform, opacity;
@@ -617,6 +611,7 @@
       padding-top: 120px;
       padding-bottom: 80px;
       overflow: hidden;
+      background: var(--bg);
     }
 
     #network-canvas {
@@ -747,72 +742,7 @@
       letter-spacing: 0.02em;
     }
 
-    /* ---------- TRUSTED BY ---------- */
-    .trusted {
-      position: relative;
-      padding: 56px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-      overflow: hidden;
-    }
-
-    .trusted .eyebrow {
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-
-    .trusted-mask {
-      -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-      mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-    }
-
-    .marquee {
-      display: flex;
-      width: max-content;
-      animation: scroll-left 32s linear infinite;
-    }
-
-    .marquee:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes scroll-left {
-      from {
-        transform: translateX(0);
-      }
-
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    .logo-chip {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      margin-right: 14px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--card);
-      color: var(--muted);
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 15px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .logo-chip .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    /* ---------- WHY JOIN ---------- */
+    /* ---------- Why Join ---------- */
     .why {
       padding: 140px 0 120px;
       position: relative;
@@ -1392,15 +1322,6 @@
     </div>
   </section>
 
-  <section class="trusted">
-    <div class="container">
-      <div class="eyebrow">Trusted By Universities &amp; Partners</div>
-    </div>
-    <div class="trusted-mask">
-      <div class="marquee" id="marquee"></div>
-    </div>
-  </section>
-
   <section class="why" id="about">
     <div class="container">
       <div class="section-head">
@@ -1720,15 +1641,7 @@
       opacity: 0, y: 20, scale: 0.95, duration: 0.6, ease: 'power3.out'
     });
 
-    // ---------- Trusted-by marquee ----------
-    const partners = ['IIT Alumni Network', 'NIT Innovation Cell', 'Startup Tamil Nadu', 'GitHub Campus', 'AWS Educate', 'Google Developer Groups', 'Microsoft Learn', 'NASSCOM Foundation'];
-    const marquee = document.getElementById('marquee');
-    [...partners, ...partners].forEach(name => {
-      const chip = document.createElement('div');
-      chip.className = 'logo-chip';
-      chip.innerHTML = `<span class="dot"></span>${name}`;
-      marquee.appendChild(chip);
-    });
+        
 
     // ---------- AntiGravity Particle Background Animation ----------
     (function () {

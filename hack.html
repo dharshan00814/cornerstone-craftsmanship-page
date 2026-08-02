@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="hack.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -44,8 +42,13 @@
         }
 
         @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-500px); }
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-500px);
+            }
         }
 
         /* Floating neon blobs for depth */
@@ -62,19 +65,25 @@
         }
 
         body::before {
-            width: 700px; height: 700px;
+            width: 700px;
+            height: 700px;
             background: #5B5CFF;
-            top: -250px; left: -150px;
+            top: -250px;
+            left: -150px;
         }
 
         body::after {
-            width: 600px; height: 600px;
+            width: 600px;
+            height: 600px;
             background: #00D4FF;
-            bottom: -250px; right: -150px;
+            bottom: -250px;
+            right: -150px;
         }
 
         @keyframes float {
-            50% { transform: translateY(60px) translateX(40px); }
+            50% {
+                transform: translateY(60px) translateX(40px);
+            }
         }
 
         .container {
@@ -227,10 +236,21 @@
         }
 
         @media (max-width: 768px) {
-            .card { padding: 50px 28px; }
-            h1 { font-size: 38px; }
-            .icon { font-size: 65px; }
-            p { font-size: 16px; }
+            .card {
+                padding: 50px 28px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .icon {
+                font-size: 65px;
+            }
+
+            p {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
@@ -240,7 +260,7 @@
 
     <div class="container">
         <div class="card">
-            <div class="badge">🚀 Hyna Community Hackathon</div>
+            <div class="badge">🚀 Hyna Connect Hackathon</div>
             <div class="icon">💻</div>
             <h1>Hackathon <span class="gradient">Coming Soon</span></h1>
             <p>We're building an exciting hackathon experience for innovators, developers, designers, and creators.
@@ -257,7 +277,7 @@
                 </div>
                 <div class="box">
                     <h3>Mode</h3>
-                    <span>Online &amp; Offline</span>
+                    <span>Offline</span>
                 </div>
             </div>
 
@@ -266,8 +286,9 @@
                 <a href="/" class="btn secondary">← Back to Home</a>
             </div>
 
-            <div class="footer">Powered by <strong>Hyna Community</strong> • Build • Learn • Innovate</div>
+            <div class="footer">Powered by <strong>Hyna Connect</strong> • Build • Learn • Innovate</div>
         </div>
     </div>
 </body>
+
 </html>

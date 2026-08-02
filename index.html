@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hyna Community — Learn. Build. Connect. Grow.</title>
+  <title>Hyna Connect — Learn. Build. Connect. Grow.</title>
   <meta name="description"
-    content="Hyna Community, powered by Hyna Studio — India's student innovation network for learning, mentorship, and real-world building.">
+    content="Hyna Connect, powered by Hyna Studio — India's student innovation network for learning, mentorship, and real-world building.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -109,8 +109,7 @@
       z-index: 100;
     }
 
-    header.scrolled {
-    }
+    header.scrolled {}
 
     nav {
       position: fixed;
@@ -135,14 +134,8 @@
         0 24px 48px rgba(0, 0, 0, 0.8),
         inset 0 1px 1px rgba(255, 255, 255, 0.25),
         inset 0 -1px 0 rgba(0, 0, 0, 0.5);
-      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-top 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-      will-change: transform, opacity, box-shadow;
-    }
-
-    body:not(.hero-animate) nav {
-      transform: translateX(-50%) translateY(-28px) translateZ(0);
-      opacity: 0;
-      pointer-events: none;
+      transition: max-width 0.4s cubic-bezier(0.19, 1, 0.22, 1), background 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-top 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+      will-change: max-width, background, border-top, box-shadow;
     }
 
     /* Logo */
@@ -180,102 +173,36 @@
     }
 
     .logo-highlight {
-      color: #7ef7f7;
+      color: #ffffff;
     }
 
     .logo-sub {
       font-size: 0.6rem;
-      color: rgba(255, 255, 255, 0.72);
+      color: #ffffff;
       letter-spacing: 0.06em;
       margin-top: 0.1rem;
       font-weight: 600;
       text-transform: uppercase;
       transition: color 0.3s ease;
     }
-    .logo-ring{
-    width:140px;
-    height:140px;
-    border-radius:50%;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
 
-/* Spinning Gradient Ring */
-.logo-ring::before{
-    content:"";
-    position:absolute;
-    inset:-6px;
-    border-radius:50%;
-    background:conic-gradient(
-        #ffd84d,
-        transparent 25%,
-        #ffd84d 50%,
-        transparent 75%,
-        #ffd84d
-    );
-    animation:spin 4s linear infinite;
-    filter:blur(2px);
-}
-.logo-ring::after{
-    content:"";
-    position:absolute;
-    inset:8px;
-    background:#000;
-    border-radius:50%;
-}
-
-/* Logo */
-.hyna-logo{
-    width:90px;
-    height:90px;
-    object-fit:contain;
-    position:relative;
-    z-index:2;
-}
-
-/* Rotation */
-@keyframes spin{
-    from{
-        transform:rotate(0deg);
+    .logo-wrapper {
+      margin-bottom: 40px;
     }
-    to{
-        transform:rotate(360deg);
+
+    .hyna-logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
     }
-}
-.logo-wrapper{
-    margin-bottom:40px;
-}
 
-.hyna-logo{
-    width:110px;
-    height:110px;
-    object-fit:contain;
-
-    /* Always Spin */
-    animation: logoSpin 5s linear infinite;
-
-    /* Optional glow */
-    filter: drop-shadow(0 0 20px rgba(255,215,0,.5));
-}
-
-@keyframes logoSpin{
-    from{
-        transform: rotate(0deg);
+    /* Mobile */
+    @media (max-width:768px) {
+      .hyna-logo {
+        width: 80px;
+        height: 80px;
+      }
     }
-    to{
-        transform: rotate(360deg);
-    }
-}
-
-/* Mobile */
-@media (max-width:768px){
-    .hyna-logo{
-        width:80px;
-        height:80px;
-    }
-}
 
     /* Center nav links — inner pill */
     .nav-links {
@@ -449,11 +376,7 @@
         inset 0 -1px 0 rgba(0, 0, 0, 0.6);
     }
 
-    nav.nav-hidden {
-      transform: translateX(-50%) translateY(-120%) translateZ(0);
-      opacity: 0;
-      pointer-events: none;
-    }
+
 
     /* Mobile nav — scoped only to nav area, non-destructive to team stacking */
     @media (max-width: 768px) {
@@ -666,12 +589,12 @@
       background: #ffffff;
       color: #000000;
       border-color: transparent;
-      box-shadow: 0 4px 16px rgba(255,255,255,0.08);
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.08);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.15);
       background: #f0f0f0;
     }
 
@@ -698,13 +621,7 @@
       background: var(--bg);
     }
 
-    #network-canvas {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-      opacity: 1;
-      cursor: crosshair;
-    }
+
 
     .hero::before {
       content: '';
@@ -968,28 +885,44 @@
       pointer-events: none;
       animation: discord-float 8s ease-in-out infinite;
     }
+
     .discord-orb-1 {
-      width: 340px; height: 340px;
+      width: 340px;
+      height: 340px;
       background: rgba(88, 101, 242, 0.22);
-      top: -80px; left: -60px;
+      top: -80px;
+      left: -60px;
       animation-delay: 0s;
     }
+
     .discord-orb-2 {
-      width: 260px; height: 260px;
+      width: 260px;
+      height: 260px;
       background: rgba(114, 137, 218, 0.18);
-      bottom: -60px; right: -40px;
+      bottom: -60px;
+      right: -40px;
       animation-delay: -3s;
     }
+
     .discord-orb-3 {
-      width: 180px; height: 180px;
+      width: 180px;
+      height: 180px;
       background: rgba(88, 101, 242, 0.12);
-      top: 50%; right: 15%;
+      top: 50%;
+      right: 15%;
       animation-delay: -5s;
     }
 
     @keyframes discord-float {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-24px) scale(1.05); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-24px) scale(1.05);
+      }
     }
 
     .discord-inner {
@@ -1018,7 +951,8 @@
     }
 
     .discord-badge-dot {
-      width: 7px; height: 7px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #5865F2;
       box-shadow: 0 0 8px #5865F2;
@@ -1026,8 +960,17 @@
     }
 
     @keyframes pulse-dot {
-      0%, 100% { opacity: 1; box-shadow: 0 0 8px #5865F2; }
-      50% { opacity: 0.5; box-shadow: 0 0 16px #5865F2; }
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 8px #5865F2;
+      }
+
+      50% {
+        opacity: 0.5;
+        box-shadow: 0 0 16px #5865F2;
+      }
     }
 
     .discord-heading {
@@ -1038,7 +981,8 @@
       letter-spacing: -0.02em;
       max-width: 720px;
     }
-    .hero h1{
+
+    .hero h1 {
       padding: 131px 0px 23px;
     }
 
@@ -1068,15 +1012,18 @@
       align-items: center;
       gap: 10px;
       font-size: 14px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .discord-stat-icon {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       border-radius: 10px;
       background: rgba(88, 101, 242, 0.15);
       border: 1px solid rgba(88, 101, 242, 0.25);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .discord-stat strong {
@@ -1096,11 +1043,11 @@
 
     .discord-pill {
       padding: 7px 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 999px;
       font-size: 13px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
       font-family: var(--font-mono);
       letter-spacing: 0.02em;
       transition: all .2s ease;
@@ -1135,7 +1082,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
       opacity: 0;
       transition: opacity .25s ease;
     }
@@ -1145,13 +1092,18 @@
       box-shadow: 0 12px 48px rgba(88, 101, 242, 0.6);
     }
 
-    .btn-discord:hover::before { opacity: 1; }
-    .btn-discord:active { transform: translateY(0) scale(0.98); }
+    .btn-discord:hover::before {
+      opacity: 1;
+    }
+
+    .btn-discord:active {
+      transform: translateY(0) scale(0.98);
+    }
 
     .discord-divider {
       width: 1px;
       height: 40px;
-      background: rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .discord-cta-group {
@@ -1161,71 +1113,78 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-.discord-section{
-    position: relative;
-    overflow: hidden;
-}
 
-/* Corner Images */
-.discord-corner{
-    position:absolute;
-    top:-40px;
-    width:320px;
-    max-width:28vw;
-    opacity:.9;
-    pointer-events:none;
-    user-select:none;
-    z-index:1;
-    filter:
-        drop-shadow(0 0 40px rgba(114,137,218,.45));
-}
+    .discord-section {
+      position: relative;
+      overflow: hidden;
+    }
 
-@keyframes popUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) rotate(var(--angle));
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.05) rotate(var(--angle));
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(var(--angle));
-  }
-}
+    /* Corner Images */
+    .discord-corner {
+      position: absolute;
+      top: 40px;
+      width: 320px;
+      max-width: 24vw;
+      opacity: .9;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
+      filter: drop-shadow(0 0 40px rgba(114, 137, 218, .35));
+    }
 
-.discord-corner-left{
-   position: absolute;
-  top: -10px;
-  animation: popUp 1.2s ease-out forwards;
-}
+    @keyframes popUp {
+      0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(var(--angle));
+      }
 
-.discord-corner-right {
-  position: absolute;
-  top: 0;
-  animation: popUp 1.2s ease-out forwards;
-}
+      60% {
+        opacity: 1;
+        transform: scale(1.05) rotate(var(--angle));
+      }
 
-/* Left corner */
-.discord-corner-left {
-  left: 10px;
-  --angle: -8deg;
-}
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(var(--angle));
+      }
+    }
 
-/* Right corner */
-.discord-corner-right {
-  right: -60px;
-  --angle: 8deg;
-  transform: scaleX(-1);
-}
+    .discord-corner-left {
+      position: absolute;
+      top: 40px;
+      animation: popUp 1.2s ease-out forwards;
+    }
+
+    .discord-corner-right {
+      position: absolute;
+      top: 50px;
+      animation: popUp 1.2s ease-out forwards;
+    }
+
+    /* Left corner */
+    .discord-corner-left {
+      left: 10px;
+      --angle: -8deg;
+    }
+
+    /* Right corner */
+    .discord-corner-right {
+      right: -60px;
+      --angle: 8deg;
+    }
 
     .discord-secondary-link {
-      color: rgba(255,255,255,0.45);
+      color: rgba(255, 255, 255, 0.45);
       font-size: 14px;
       transition: color .2s;
     }
-    .discord-secondary-link:hover { color: rgba(255,255,255,0.8); }
+
+    .discord-secondary-link:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
 
     /* Card grid inside discord section */
     .discord-channels {
@@ -1238,8 +1197,8 @@
     }
 
     .discord-channel-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 14px;
       padding: 20px;
       text-align: left;
@@ -1254,7 +1213,7 @@
     .discord-channel-card .ch-name {
       font-family: var(--font-mono);
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255, 255, 255, 0.5);
       margin-bottom: 6px;
     }
 
@@ -1265,36 +1224,54 @@
 
     .discord-channel-card p {
       font-size: 13px;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       line-height: 1.5;
     }
-    @media (max-width:768px){
 
-    .discord-corner{
-        width:160px;
-        top:-15px;
+    @media (max-width: 1200px) {
+      .discord-corner {
+        max-width: 18vw;
+        opacity: 0.55;
+      }
     }
 
-    .discord-corner-left{
-        left:-35px;
-    }
+    @media (max-width:768px) {
 
-    .discord-corner-right{
-        right:-35px;
-    }
+      .discord-corner {
+        width: 160px;
+        top: 15px;
+        border-radius: 8px;
+        opacity: 0.45;
+      }
 
-}
+      .discord-corner-left {
+        left: -35px;
+      }
+
+      .discord-corner-right {
+        right: -35px;
+      }
+
+    }
 
     @media (max-width: 768px) {
-      .discord-channels { grid-template-columns: 1fr 1fr; }
-      .discord-stats { gap: 20px; }
+      .discord-channels {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .discord-stats {
+        gap: 20px;
+      }
     }
 
     @media (max-width:640px) {
       .why-grid {
         grid-template-columns: 1fr;
       }
-      .discord-channels { grid-template-columns: 1fr; }
+
+      .discord-channels {
+        grid-template-columns: 1fr;
+      }
 
       .container {
         padding: 0 20px;
@@ -1302,6 +1279,204 @@
 
       .btn-ghost.desktop-only {
         display: none;
+      }
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #050508;
+      border-top: 1px solid var(--border);
+      padding: 80px 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 2fr;
+      gap: 48px;
+      margin-bottom: 64px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .footer-logo-img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .footer-logo-text {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #ffffff;
+    }
+
+    .footer-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .footer-social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      transition: all 0.3s ease;
+    }
+
+    .footer-social-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .footer-title {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 0.25s ease;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    .footer-newsletter {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      position: relative;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .newsletter-input:focus {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .newsletter-btn {
+      padding: 12px 20px;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .newsletter-btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-1.5px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-legal a {
+      color: var(--muted);
+      font-size: 13px;
+      transition: color 0.25s ease;
+    }
+
+    .footer-legal a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
       }
     }
   </style>
@@ -1314,9 +1489,9 @@
 
       <!-- Logo -->
       <a href="#home" class="nav-logo">
-        <img class="logo-img" src="./hyna-logo-new.png" alt="Hyna Community Logo">
+        <img class="logo-img" src="./hyna-logo-new.png" alt="Hyna Connect Logo">
         <div class="logo-text">
-          <span class="logo-main"><span class="logo-highlight">Hyna</span> Community</span>
+          <span class="logo-main"><span class="logo-highlight">Hyna</span> Connect</span>
           <span class="logo-sub">by Hyna Studio</span>
         </div>
       </a>
@@ -1332,7 +1507,7 @@
       </ul>
 
       <!-- Right actions -->
-      <a href="#join" class="nav-cta">Join Community</a>
+      <a href="#join" class="nav-cta">Sign in / Login</a>
       <button class="mobile-toggle" id="navMobileToggle" aria-label="Open menu"><span></span></button>
 
     </nav>
@@ -1349,17 +1524,17 @@
   </div>
 
   <section class="hero" id="home">
-    <canvas id="network-canvas"></canvas>
+
     <div class="hero-grid-overlay"></div>
     <div class="container hero-content">
-      
+
       <h1 id="hero-heading">
         <span class="word"><span>Building Together, Growing Together</span></span>
         <span class="word "><span>Build.</span></span>
-        
+
       </h1>
       <p class="sub">
-        Hyna Community brings students, mentors, and builders into one network —
+        Hyna Connect brings students, mentors, and builders into one network —
         real projects, real mentorship, and a straight line from your first line of code
         to your first offer.
       </p>
@@ -1370,19 +1545,19 @@
 
       <div class="hero-stats">
         <div class="stat">
-          <div class="num" data-count="5000">0</div>
+          <div class="num" data-count="0">0</div>
           <div class="label">Students</div>
         </div>
         <div class="stat">
-          <div class="num" data-count="100">0</div>
+          <div class="num" data-count="0">0</div>
           <div class="label">Workshops</div>
         </div>
         <div class="stat">
-          <div class="num" data-count="50">0</div>
+          <div class="num" data-count="0">0</div>
           <div class="label">Mentors</div>
         </div>
         <div class="stat">
-          <div class="num" data-count="300">0</div>
+          <div class="num" data-count="0">0</div>
           <div class="label">Projects</div>
         </div>
       </div>
@@ -1392,7 +1567,6 @@
   <section class="why" id="about">
     <div class="container">
       <div class="section-head">
-        <div class="eyebrow">Why Join Hyna</div>
         <h2>One community, every stage of the climb.</h2>
         <p>From your first workshop to your first startup — the network compounds with you.</p>
       </div>
@@ -1403,14 +1577,7 @@
 
   <!-- ===== DISCORD SECTION ===== -->
   <section class="discord-section" id="community">
-    <!-- Decorative Top Images -->
-<img src="./ChatGPT Image Jul 31, 2026, 01_41_15 PM.png"
-     alt="discord"
-     class="discord-corner discord-corner-left">
 
-<img src="./ChatGPT Image Jul 31, 2026, 01_46_09 PM.png"
-     alt="discord"
-     class="discord-corner discord-corner-right">
     <div class="discord-orb discord-orb-1"></div>
     <div class="discord-orb discord-orb-2"></div>
     <div class="discord-orb discord-orb-3"></div>
@@ -1428,13 +1595,20 @@
       </h2>
 
       <p class="discord-sub">
-        Jump into Hyna's Discord — a live hub of 5,000+ students, mentors, and makers sharing resources, feedback, project drops, and late-night debugging sessions.
+        Jump into Hyna's Discord — a live hub of 5,000+ students, mentors, and makers sharing resources, feedback,
+        project drops, and late-night debugging sessions.
       </p>
 
       <div class="discord-stats">
         <div class="discord-stat">
           <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
           </div>
           <div>
             <strong>10+</strong>
@@ -1443,7 +1617,10 @@
         </div>
         <div class="discord-stat">
           <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+            </svg>
           </div>
           <div>
             <strong>24/7</strong>
@@ -1452,7 +1629,11 @@
         </div>
         <div class="discord-stat">
           <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
           </div>
           <div>
             <strong>1+</strong>
@@ -1461,7 +1642,13 @@
         </div>
         <div class="discord-stat">
           <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 00-3-3.87" />
+              <path d="M16 3.13a4 4 0 010 7.75" />
+            </svg>
           </div>
           <div>
             <strong>1+</strong>
@@ -1515,7 +1702,9 @@
         <a href="https://discord.gg/hyna" target="_blank" rel="noopener" class="btn-discord" id="discord-join-btn">
           <!-- Discord SVG logo -->
           <svg width="22" height="22" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M60.104 4.583A58.614 58.614 0 0 0 45.12.52a.219.219 0 0 0-.232.11 40.784 40.784 0 0 0-1.8 3.698c-5.487-.823-10.944-.823-16.318 0a37.376 37.376 0 0 0-1.827-3.698.228.228 0 0 0-.232-.11 58.47 58.47 0 0 0-14.985 4.063.207.207 0 0 0-.095.082C1.577 18.956-.968 32.86.302 46.59a.244.244 0 0 0 .093.166c6.299 4.624 12.405 7.43 18.396 9.283a.23.23 0 0 0 .25-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.377c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.031c11.62 5.305 24.198 5.305 35.681 0a.219.219 0 0 1 .232.028c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.377 36.384 36.384 0 0 1-5.543 2.637.226.226 0 0 0-.12.315 47.249 47.249 0 0 0 3.623 5.897.226.226 0 0 0 .25.085c6.015-1.853 12.122-4.66 18.42-9.283a.228.228 0 0 0 .092-.163c1.535-15.884-2.57-29.675-10.876-41.925a.18.18 0 0 0-.092-.085ZM23.725 38.14c-3.517 0-6.415-3.228-6.415-7.192 0-3.965 2.844-7.193 6.415-7.193 3.598 0 6.468 3.255 6.415 7.193 0 3.964-2.844 7.192-6.415 7.192Zm23.704 0c-3.516 0-6.415-3.228-6.415-7.192 0-3.965 2.845-7.193 6.415-7.193 3.6 0 6.468 3.255 6.415 7.193 0 3.964-2.815 7.192-6.415 7.192Z" fill="currentColor"/>
+            <path
+              d="M60.104 4.583A58.614 58.614 0 0 0 45.12.52a.219.219 0 0 0-.232.11 40.784 40.784 0 0 0-1.8 3.698c-5.487-.823-10.944-.823-16.318 0a37.376 37.376 0 0 0-1.827-3.698.228.228 0 0 0-.232-.11 58.47 58.47 0 0 0-14.985 4.063.207.207 0 0 0-.095.082C1.577 18.956-.968 32.86.302 46.59a.244.244 0 0 0 .093.166c6.299 4.624 12.405 7.43 18.396 9.283a.23.23 0 0 0 .25-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.377c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.031c11.62 5.305 24.198 5.305 35.681 0a.219.219 0 0 1 .232.028c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.377 36.384 36.384 0 0 1-5.543 2.637.226.226 0 0 0-.12.315 47.249 47.249 0 0 0 3.623 5.897.226.226 0 0 0 .25.085c6.015-1.853 12.122-4.66 18.42-9.283a.228.228 0 0 0 .092-.163c1.535-15.884-2.57-29.675-10.876-41.925a.18.18 0 0 0-.092-.085ZM23.725 38.14c-3.517 0-6.415-3.228-6.415-7.192 0-3.965 2.844-7.193 6.415-7.193 3.598 0 6.468 3.255 6.415 7.193 0 3.964-2.844 7.192-6.415 7.192Zm23.704 0c-3.516 0-6.415-3.228-6.415-7.192 0-3.965 2.845-7.193 6.415-7.193 3.6 0 6.468 3.255 6.415 7.193 0 3.964-2.815 7.192-6.415 7.192Z"
+              fill="currentColor" />
           </svg>
           Join Our Discord
         </a>
@@ -1526,53 +1715,102 @@
     </div>
   </section>
   <link rel="stylesheet" href="hack.css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-    <!-- Google Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <section class="hero">
+  <section class="hero">
 
-    <!-- Spinning Hyna Logo -->
-    <div class="logo-wrapper">
-        <div class="logo-ring">
-            <img src="./hyna-logo-new.png" alt="Hyna Studio Logo" class="hyna-logo">
-        </div>
-    </div>
+
 
     <h1>
-        HYNA HACKATHON 2026
+      HYNA HACKATHON 2026
     </h1>
 
     <p>
-        Innovate. Build. Launch.
-        Join the biggest student hackathon conducted by
-        Hyna Studio.
+      Innovate. Build. Launch.
+      Join the biggest student hackathon conducted by
+      Hyna Studio.
     </p>
 
     <a href="./hack.html" class="register-btn">
-        Register Now
+      Register Now
     </a>
 
-</section>
+  </section>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="footer-logo">
+            <img class="footer-logo-img" src="./hyna-logo-new.png" alt="Hyna Connect Logo">
+            <span class="footer-logo-text">Hyna Connect</span>
+          </a>
+          <p class="footer-desc">Building the next generation of creators, innovators, and builders. Connect with peers,
+            learn skills, and build products.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/hynaconnect" target="_blank" class="footer-social-link" aria-label="GitHub"><i
+                class="fa-brands fa-github"></i></a>
+            <a href="https://twitter.com/hynaconnect" target="_blank" class="footer-social-link" aria-label="Twitter"><i
+                class="fa-brands fa-twitter"></i></a>
+            <a href="https://discord.gg/hyna" target="_blank" class="footer-social-link" aria-label="Discord"><i
+                class="fa-brands fa-discord"></i></a>
+            <a href="https://linkedin.com/company/hynaconnect" target="_blank" class="footer-social-link"
+              aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://instagram.com/hynaconnect" target="_blank" class="footer-social-link"
+              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Why Us</a></li>
+            <li><a href="#learning">Learning Program</a></li>
+            <li><a href="#events">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4 class="footer-title">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#community">Community</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+            <li><a href="./hack.html">Hackathon 2026</a></li>
+            <li><a href="./why-choose.html">Why Choose Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-title">Stay Updated</h4>
+          <p class="footer-desc">Receive updates about batches, hackathons, and community meetups.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Hyna Connect. Powered by <a href="https://github.com/dharshan00814" target="_blank"
+            style="color: inherit; text-decoration: underline;">Hyna Studio</a>. All rights reserved.
+        </div>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
   <script>
     // ---------- Header scroll state ----------
     const nav = document.querySelector('nav');
     const header = document.getElementById('site-header');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
       const currentScroll = window.scrollY;
       header.classList.toggle('scrolled', currentScroll > 20);
       nav.classList.toggle('nav-scrolled', currentScroll > 20);
-      if (currentScroll > 100 && currentScroll > lastScroll) {
-        nav.classList.add('nav-hidden');
-      } else {
-        nav.classList.remove('nav-hidden');
-      }
-      lastScroll = currentScroll;
     }, { passive: true });
 
     document.body.classList.add('hero-animate');
@@ -1707,224 +1945,9 @@
       opacity: 0, y: 20, scale: 0.95, duration: 0.6, ease: 'power3.out'
     });
 
-        
 
-    // ---------- AntiGravity Particle Background Animation ----------
-    (function () {
-      const canvas = document.getElementById('network-canvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
 
-      const PARTICLE_DENSITY = 0.00015;
-      const BG_PARTICLE_DENSITY = 0.00005;
-      const MOUSE_RADIUS = 200;
-      const RETURN_SPEED = 0.08;
-      const DAMPING = 0.90;
-      const REPULSION_STRENGTH = 1.4;
 
-      const randomRange = (min, max) => Math.random() * (max - min) + min;
-
-      let particles = [];
-      let backgroundParticles = [];
-      let mouse = { x: -1000, y: -1000, isActive: false };
-      let frameId = null;
-
-      function initParticles(width, height) {
-        const particleCount = Math.floor(width * height * PARTICLE_DENSITY);
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-          const x = Math.random() * width;
-          const y = Math.random() * height;
-          const isAccent = Math.random() > 0.90;
-          particles.push({
-            x, y, originX: x, originY: y,
-            vx: 0, vy: 0,
-            size: randomRange(0.8, 2.4),
-            isAccent,
-            angle: Math.random() * Math.PI * 2
-          });
-        }
-
-        const bgCount = Math.floor(width * height * BG_PARTICLE_DENSITY);
-        backgroundParticles = [];
-        for (let i = 0; i < bgCount; i++) {
-          backgroundParticles.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            vx: (Math.random() - 0.5) * 0.2,
-            vy: (Math.random() - 0.5) * 0.2,
-            size: randomRange(0.4, 1.4),
-            alpha: randomRange(0.08, 0.35),
-            phase: Math.random() * Math.PI * 2
-          });
-        }
-      }
-
-      function resize() {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        const dpr = window.devicePixelRatio || 1;
-        canvas.width = width * dpr;
-        canvas.height = height * dpr;
-        canvas.style.width = width + 'px';
-        canvas.style.height = height + 'px';
-        ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.scale(dpr, dpr);
-        initParticles(width, height);
-      }
-
-      function animate(time) {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-
-        ctx.clearRect(0, 0, width, height);
-
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const pulseOpacity = Math.sin(time * 0.0008) * 0.04 + 0.07;
-        const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(width, height) * 0.65);
-        glow.addColorStop(0, `rgba(255, 255, 255, ${pulseOpacity * 0.6})`);
-        glow.addColorStop(0.4, `rgba(180, 200, 255, ${pulseOpacity * 0.3})`);
-        glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = glow;
-        ctx.fillRect(0, 0, width, height);
-
-        for (let i = 0; i < backgroundParticles.length; i++) {
-          const p = backgroundParticles[i];
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0) p.x = width;
-          if (p.x > width) p.x = 0;
-          if (p.y < 0) p.y = height;
-          if (p.y > height) p.y = 0;
-
-          const twinkle = Math.sin(time * 0.002 + p.phase) * 0.5 + 0.5;
-          const currentAlpha = p.alpha * (0.3 + 0.7 * twinkle);
-
-          ctx.globalAlpha = currentAlpha;
-          ctx.fillStyle = '#ffffff';
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ctx.fill();
-        }
-        ctx.globalAlpha = 1.0;
-
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          const dx = mouse.x - p.x;
-          const dy = mouse.y - p.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (mouse.isActive && distance < MOUSE_RADIUS && distance > 0.5) {
-            const forceDirectionX = dx / distance;
-            const forceDirectionY = dy / distance;
-            const force = (MOUSE_RADIUS - distance) / MOUSE_RADIUS;
-            const repulsion = force * REPULSION_STRENGTH;
-            p.vx -= forceDirectionX * repulsion * 6;
-            p.vy -= forceDirectionY * repulsion * 6;
-          }
-
-          const springDx = p.originX - p.x;
-          const springDy = p.originY - p.y;
-          p.vx += springDx * RETURN_SPEED;
-          p.vy += springDy * RETURN_SPEED;
-        }
-
-        for (let i = 0; i < particles.length; i++) {
-          for (let j = i + 1; j < particles.length; j++) {
-            const p1 = particles[i];
-            const p2 = particles[j];
-            const dx = p2.x - p1.x;
-            const dy = p2.y - p1.y;
-            const distSq = dx * dx + dy * dy;
-            const minDist = p1.size + p2.size;
-
-            if (distSq < minDist * minDist) {
-              const dist = Math.sqrt(distSq);
-              const nx = dx / dist;
-              const ny = dy / dist;
-              const overlap = minDist - dist;
-
-              p1.x -= nx * overlap * 0.5;
-              p1.y -= ny * overlap * 0.5;
-              p2.x += nx * overlap * 0.5;
-              p2.y += ny * overlap * 0.5;
-
-              const dvx = p1.vx - p2.vx;
-              const dvy = p1.vy - p2.vy;
-              const velocityAlongNormal = dvx * nx + dvy * ny;
-
-              if (velocityAlongNormal > 0) {
-                const m1 = p1.size;
-                const m2 = p2.size;
-                const restitution = 0.85;
-                const impulse = (-(1 + restitution) * velocityAlongNormal) / (1 / m1 + 1 / m2);
-
-                p1.vx += (impulse * nx) / m1;
-                p1.vy += (impulse * ny) / m1;
-                p2.vx -= (impulse * nx) / m2;
-                p2.vy -= (impulse * ny) / m2;
-              }
-            }
-          }
-        }
-
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          p.vx *= DAMPING;
-          p.vy *= DAMPING;
-          p.x += p.vx;
-          p.y += p.vy;
-
-          const velocity = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
-          const opacity = Math.min(0.25 + velocity * 0.12, 1);
-
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-
-          if (p.isAccent) {
-            ctx.fillStyle = `rgba(180, 210, 255, ${Math.min(opacity + 0.15, 1)})`;
-          } else {
-            ctx.fillStyle = `rgba(255, 255, 255, ${opacity})`;
-          }
-          ctx.fill();
-        }
-
-        frameId = requestAnimationFrame(animate);
-      }
-
-      window.addEventListener('resize', () => {
-        if (frameId) cancelAnimationFrame(frameId);
-        resize();
-        frameId = requestAnimationFrame(animate);
-      });
-
-      window.addEventListener('mousemove', e => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-        mouse.isActive = true;
-      });
-
-      document.addEventListener('mouseleave', () => {
-        mouse.isActive = false;
-      });
-
-      window.addEventListener('touchmove', e => {
-        if (e.touches.length > 0) {
-          mouse.x = e.touches[0].clientX;
-          mouse.y = e.touches[0].clientY;
-          mouse.isActive = true;
-        }
-      }, { passive: true });
-
-      window.addEventListener('touchend', () => {
-        mouse.isActive = false;
-      }, { passive: true });
-
-      resize();
-      frameId = requestAnimationFrame(animate);
-    })();
   </script>
 
 </body>

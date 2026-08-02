@@ -594,6 +594,170 @@
       -webkit-backdrop-filter: blur(10px) saturate(180%);
     }
 
+    /* ── FOOTER ── */
+    .site-footer {
+      position: relative;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+      padding: 3rem 0 2rem;
+      background: linear-gradient(180deg, rgba(10, 10, 15, 0.35) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-brand .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .footer-brand .logo-main {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .footer-brand .logo-highlight {
+      color: #7ef7f7;
+    }
+
+    .footer-brand .logo-sub {
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.6);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .footer-tagline {
+      margin-top: 0.5rem;
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 220px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 15px;
+      transition: all 0.25s ease;
+    }
+
+    .footer-social a:hover {
+      border-color: rgba(126, 247, 247, 0.4);
+      color: #7ef7f7;
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      max-width: 1240px;
+      margin: 2.5rem auto 0;
+      padding: 0 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    .footer-copy {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .footer-copy .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--muted);
+    }
+
+    .footer-legal a {
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .footer-legal a:hover {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding: 0 20px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 20px 0;
+      }
+    }
+
+    /* Keep reduced blur when animations are disabled */
+    body.animation-disabled nav,
+    body.animation-disabled nav.nav-scrolled {
+      backdrop-filter: blur(10px) saturate(180%);
+      -webkit-backdrop-filter: blur(10px) saturate(180%);
+    }
+
     /* Mobile toggle */
     .mobile-toggle {
       display: none;
@@ -1925,7 +2089,75 @@
       resize();
       frameId = requestAnimationFrame(animate);
     })();
-  </script>
+   </script>
+
+  <!-- ── Site Footer ── -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo" style="display: inline-flex; align-items: center; gap: 0.65rem;">
+          <img class="logo-img" src="./hyna-logo-new.png" alt="Hyna LearningHub Logo">
+          <div class="logo-text" style="display: flex; flex-direction: column; line-height: 1.1;">
+            <span class="logo-main"><span class="logo-highlight">Hyna</span> LearningHub</span>
+            <span class="logo-sub">by Hyna LearningHub</span>
+          </div>
+        </a>
+        <p class="footer-tagline">India's student innovation network for learning, mentorship, and real-world building.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Why Us</a></li>
+          <li><a href="#learning">Learning</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#learning">Skill Tracks</a></li>
+          <li><a href="#learning">Hackathons</a></li>
+          <li><a href="#community">Mentorship</a></li>
+          <li><a href="#events">Workshops</a></li>
+          <li><a href="#learning">Internships</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://discord.gg/hyna" target="_blank" rel="noopener">Discord Community</a></li>
+          <li><a href="mailto:team.hynastudio@gmail.com">Email Us</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://discord.gg/hyna" target="_blank" rel="noopener" aria-label="Discord"><i class="fab fa-discord"></i></a>
+          <a href="mailto:team.hynastudio@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <span>&copy; 2026 Hyna LearningHub.</span>
+        <span class="dot"></span>
+        <span>All rights reserved.</span>
+      </div>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="terms.html">Terms of Service</a>
+        &nbsp;·&nbsp;
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 

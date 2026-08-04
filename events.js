@@ -5,8 +5,17 @@
   const links=document.querySelector('.nav-links');
   if(nav){window.addEventListener('scroll',()=>nav.classList.toggle('nav-scrolled',window.scrollY>60),{passive:true});}
   if(toggle&&links){
-    toggle.addEventListener('click',()=>{toggle.classList.toggle('active');links.classList.toggle('active');});
-    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{toggle.classList.remove('active');links.classList.remove('active');}));
+    toggle.setAttribute('aria-expanded','false');
+    toggle.addEventListener('click',()=>{
+      const isOpen=links.classList.toggle('active');
+      toggle.classList.toggle('active',isOpen);
+      toggle.setAttribute('aria-expanded',isOpen?'true':'false');
+    });
+    links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      toggle.classList.remove('active');
+      links.classList.remove('active');
+      toggle.setAttribute('aria-expanded','false');
+    }));
   }
 
   const revealObserver=new IntersectionObserver((entries)=>{

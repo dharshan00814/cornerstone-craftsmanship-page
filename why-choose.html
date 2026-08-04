@@ -1336,9 +1336,20 @@
       const toggle = document.getElementById("navToggleCheckbox");
       const navLinks = document.querySelector(".nav-links");
 
-      if (toggle) {
+      if (toggle && navLinks) {
+        toggle.setAttribute("aria-expanded", "false");
         toggle.addEventListener("change", () => {
           navLinks.classList.toggle("active", toggle.checked);
+          toggle.setAttribute("aria-expanded", toggle.checked ? "true" : "false");
+        });
+
+        navLinks.querySelectorAll("a:not(.nav-link-has-dropdown)").forEach(link => {
+          link.addEventListener("click", () => {
+            toggle.checked = false;
+            navLinks.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+            document.querySelectorAll(".nav-item-dropdown.open").forEach(item => item.classList.remove("open"));
+          });
         });
       }
 

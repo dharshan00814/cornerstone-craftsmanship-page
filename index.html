@@ -377,39 +377,57 @@
     /* Mobile nav — scoped only to nav area, non-destructive to team stacking */
     @media (max-width: 768px) {
       nav {
-        position: relative;
+        position: fixed;
+        top: 14px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        transform: none;
+        padding: 9px 9px 9px 12px;
         z-index: 10010;
       }
 
       .nav-links {
         position: fixed;
-        top: 70px;
+        top: 74px;
         left: 12px;
         right: 12px;
+        width: auto;
+        margin: 0;
         background: #0f0f14;
-        border: 1px solid rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.14);
         display: flex;
         flex-direction: column;
-        gap: 4px;
+        gap: 6px;
         align-items: stretch;
-        padding: 10px;
-        border-radius: 18px;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        padding: 12px;
+        border-radius: 20px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
         opacity: 0;
+        visibility: hidden;
         pointer-events: none;
-        transition: opacity 160ms ease;
+        transform: translateY(-8px);
+        transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+        z-index: 10011;
       }
 
       .nav-links.active {
         opacity: 1;
+        visibility: visible;
         pointer-events: auto;
+        transform: none;
+      }
+
+      .nav-links li {
+        width: 100%;
       }
 
       .nav-links a {
+        display: block;
         width: 100%;
         text-align: center;
-        padding: 10px 6px;
-        color: rgba(255, 255, 255, 0.7) !important;
+        padding: 12px 6px;
+        color: rgba(255, 255, 255, 0.9) !important;
       }
 
       /* Navbar subtitle styling for mobile */
@@ -711,6 +729,20 @@
     .mobile-toggle span::after {
       position: absolute;
       top: 5px;
+    }
+
+    .mobile-toggle.active span {
+      background: transparent;
+    }
+
+    .mobile-toggle.active span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .mobile-toggle.active span::after {
+      top: 0;
+      transform: rotate(-45deg);
     }
 
     .mobile-menu {
@@ -1401,10 +1433,19 @@
     // ---------- Mobile menu ----------
     const mobileToggle = document.getElementById('navMobileToggle');
     const navLinks = document.querySelector('.nav-links');
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
+    if (mobileToggle && navLinks) {
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('active');
+        mobileToggle.classList.toggle('active', isOpen);
+        mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }));
+    }
 
     // ---------- Theme toggle (visual only, dark-first design) ----------
     const themeToggle = document.getElementById('theme-toggle');

@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hyna LearningHub </title>
   <meta name="description"
-    content="Hyna Connect, powered by Hyna Connect — India's student innovation network for learning, mentorship, and real-world building.">
+    content="Hyna LearningHub, powered by Hyna LearningHub — India's student innovation network for learning, mentorship, and real-world building.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -49,6 +50,7 @@
     }
 
     body {
+      background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
       overflow-x: hidden;
@@ -1018,417 +1020,8 @@
       }
     }
 
-    /* ---------- DISCORD ---------- */
-    .discord-section {
-      position: relative;
-      padding: 120px 0 140px;
-      overflow: hidden;
-      background: var(--bg);
-    }
-
-    .discord-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(88, 101, 242, 0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 20% 50%, rgba(114, 137, 218, 0.10) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    /* Floating orbs */
-    .discord-orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(60px);
-      pointer-events: none;
-      animation: discord-float 8s ease-in-out infinite;
-    }
-
-    .discord-orb-1 {
-      width: 340px;
-      height: 340px;
-      background: rgba(88, 101, 242, 0.22);
-      top: -80px;
-      left: -60px;
-      animation-delay: 0s;
-    }
-
-    .discord-orb-2 {
-      width: 260px;
-      height: 260px;
-      background: rgba(114, 137, 218, 0.18);
-      bottom: -60px;
-      right: -40px;
-      animation-delay: -3s;
-    }
-
-    .discord-orb-3 {
-      width: 180px;
-      height: 180px;
-      background: rgba(88, 101, 242, 0.12);
-      top: 50%;
-      right: 15%;
-      animation-delay: -5s;
-    }
-
-    @keyframes discord-float {
-
-      0%,
-      100% {
-        transform: translateY(0) scale(1);
-      }
-
-      50% {
-        transform: translateY(-24px) scale(1.05);
-      }
-    }
-
-    .discord-inner {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 32px;
-    }
-
-    .discord-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 18px;
-      background: rgba(88, 101, 242, 0.18);
-      border: 1px solid rgba(88, 101, 242, 0.35);
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #a5b4fc;
-    }
-
-    .discord-badge-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #5865F2;
-      box-shadow: 0 0 8px #5865F2;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-        box-shadow: 0 0 8px #5865F2;
-      }
-
-      50% {
-        opacity: 0.5;
-        box-shadow: 0 0 16px #5865F2;
-      }
-    }
-
-    .discord-heading {
-      font-family: var(--font-display);
-      font-size: clamp(34px, 5vw, 64px);
-      font-weight: 800;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      max-width: 720px;
-    }
-
-    .hero h1 {
-      padding: 131px 0px 23px;
-    }
-
-    .discord-heading .highlight {
-      background: linear-gradient(120deg, #7289DA, #5865F2, #a5b4fc);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .discord-sub {
-      max-width: 520px;
-      color: var(--muted);
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .discord-stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .discord-stat {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
-    }
-
-    .discord-stat-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: rgba(88, 101, 242, 0.15);
-      border: 1px solid rgba(88, 101, 242, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .discord-stat strong {
-      color: #fff;
-      font-weight: 600;
-      display: block;
-      font-size: 15px;
-    }
-
-    .discord-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      max-width: 600px;
-    }
-
-    .discord-pill {
-      padding: 7px 16px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 999px;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.65);
-      font-family: var(--font-mono);
-      letter-spacing: 0.02em;
-      transition: all .2s ease;
-    }
-
-    .discord-pill:hover {
-      background: rgba(88, 101, 242, 0.2);
-      border-color: rgba(88, 101, 242, 0.4);
-      color: #a5b4fc;
-    }
-
-    .btn-discord {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 16px 36px;
-      background: #5865F2;
-      color: #fff;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: transform .25s ease, box-shadow .25s ease;
-      box-shadow: 0 6px 32px rgba(88, 101, 242, 0.45);
-      text-decoration: none;
-    }
-
-    .btn-discord::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
-      opacity: 0;
-      transition: opacity .25s ease;
-    }
-
-    .btn-discord:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 12px 48px rgba(88, 101, 242, 0.6);
-    }
-
-    .btn-discord:hover::before {
-      opacity: 1;
-    }
-
-    .btn-discord:active {
-      transform: translateY(0) scale(0.98);
-    }
-
-    .discord-divider {
-      width: 1px;
-      height: 40px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .discord-cta-group {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .discord-section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Corner Images */
-    .discord-corner {
-      position: absolute;
-      top: 40px;
-      width: 320px;
-      max-width: 24vw;
-      opacity: .9;
-      pointer-events: none;
-      user-select: none;
-      z-index: 1;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65);
-      filter: drop-shadow(0 0 40px rgba(114, 137, 218, .35));
-    }
-
-    @keyframes popUp {
-      0% {
-        opacity: 0;
-        transform: scale(0.8) rotate(var(--angle));
-      }
-
-      60% {
-        opacity: 1;
-        transform: scale(1.05) rotate(var(--angle));
-      }
-
-      100% {
-        opacity: 1;
-        transform: scale(1) rotate(var(--angle));
-      }
-    }
-
-    .discord-corner-left {
-      position: absolute;
-      top: 40px;
-      animation: popUp 1.2s ease-out forwards;
-    }
-
-    .discord-corner-right {
-      position: absolute;
-      top: 50px;
-      animation: popUp 1.2s ease-out forwards;
-    }
-
-    /* Left corner */
-    .discord-corner-left {
-      left: 10px;
-      --angle: -8deg;
-    }
-
-    /* Right corner */
-    .discord-corner-right {
-      right: -60px;
-      --angle: 8deg;
-    }
-
-    .discord-secondary-link {
-      color: rgba(255, 255, 255, 0.45);
-      font-size: 14px;
-      transition: color .2s;
-    }
-
-    .discord-secondary-link:hover {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* Card grid inside discord section */
-    .discord-channels {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      width: 100%;
-      max-width: 860px;
-      margin-top: 8px;
-    }
-
-    .discord-channel-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 14px;
-      padding: 20px;
-      text-align: left;
-      transition: border-color .25s, background .25s;
-    }
-
-    .discord-channel-card:hover {
-      background: rgba(88, 101, 242, 0.08);
-      border-color: rgba(88, 101, 242, 0.3);
-    }
-
-    .discord-channel-card .ch-name {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 6px;
-    }
-
-    .discord-channel-card .ch-name span {
-      color: rgba(88, 101, 242, 0.8);
-      margin-right: 3px;
-    }
-
-    .discord-channel-card p {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.4);
-      line-height: 1.5;
-    }
-
-    @media (max-width: 1200px) {
-      .discord-corner {
-        max-width: 18vw;
-        opacity: 0.55;
-      }
-    }
-
-    @media (max-width:768px) {
-
-      .discord-corner {
-        width: 160px;
-        top: 15px;
-        border-radius: 8px;
-        opacity: 0.45;
-      }
-
-      .discord-corner-left {
-        left: -35px;
-      }
-
-      .discord-corner-right {
-        right: -35px;
-      }
-
-    }
-
-    @media (max-width: 768px) {
-      .discord-channels {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .discord-stats {
-        gap: 20px;
-      }
-    }
-
     @media (max-width:640px) {
       .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .discord-channels {
         grid-template-columns: 1fr;
       }
 
@@ -1648,10 +1241,10 @@
 
       <!-- Logo -->
       <a href="#home" class="nav-logo">
-        <img class="logo-img" src="./hyna-logo-new.png" alt="Hyna Connect Logo">
+        <img class="logo-img" src="./hyna-logo-new.png" alt="Hyna LearningHub Logo">
         <div class="logo-text">
-          <span class="logo-main"><span class="logo-highlight">Hyna</span> Connect</span>
-          <span class="logo-sub">by Hyna Connect</span>
+          <span class="logo-main"><span class="logo-highlight">Hyna</span> LearningHub</span>
+          <span class="logo-sub">by Hyna LearningHub</span>
         </div>
       </a>
 
@@ -1735,173 +1328,7 @@
     </div>
   </section>
 
-  <!-- ===== DISCORD SECTION ===== -->
-  <section class="discord-section" id="community">
 
-    <div class="discord-orb discord-orb-1"></div>
-    <div class="discord-orb discord-orb-2"></div>
-    <div class="discord-orb discord-orb-3"></div>
-
-    <div class="container discord-inner">
-
-      <div class="discord-badge">
-        <span class="discord-badge-dot"></span>
-        Discord Community
-      </div>
-
-      <h2 class="discord-heading">
-        Where Builders<br>
-        <span class="highlight">Talk, Collab & Ship</span>
-      </h2>
-
-      <p class="discord-sub">
-        Jump into Hyna's Discord — a live hub of 5,000+ students, mentors, and makers sharing resources, feedback,
-        project drops, and late-night debugging sessions.
-      </p>
-
-      <div class="discord-stats">
-        <div class="discord-stat">
-          <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
-            </svg>
-          </div>
-          <div>
-            <strong>10+</strong>
-            Members
-          </div>
-        </div>
-        <div class="discord-stat">
-          <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-            </svg>
-          </div>
-          <div>
-            <strong>24/7</strong>
-            Active Chat
-          </div>
-        </div>
-        <div class="discord-stat">
-          <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-          </div>
-          <div>
-            <strong>1+</strong>
-            Events Hosted
-          </div>
-        </div>
-        <div class="discord-stat">
-          <div class="discord-stat-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7289DA" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 00-3-3.87" />
-              <path d="M16 3.13a4 4 0 010 7.75" />
-            </svg>
-          </div>
-          <div>
-            <strong>1+</strong>
-            Mentors Online
-          </div>
-        </div>
-      </div>
-
-      <!-- Channel preview cards -->
-      <div class="discord-channels">
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>project-showcase</div>
-          <p>Share what you built. Get real feedback from peers and mentors.</p>
-        </div>
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>find-a-team</div>
-          <p>Looking for co-founders or collaborators? Post here and match up.</p>
-        </div>
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>mentor-office-hours</div>
-          <p>Weekly live Q&A sessions with industry engineers and founders.</p>
-        </div>
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>hackathon-hub</div>
-          <p>Active hackathon threads, team formation, and submission links.</p>
-        </div>
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>resources</div>
-          <p>Curated learning paths, roadmaps, free tools, and must-reads.</p>
-        </div>
-        <div class="discord-channel-card">
-          <div class="ch-name"><span>#</span>internship-drops</div>
-          <p>Real internship openings shared daily by our partner network.</p>
-        </div>
-      </div>
-
-      <!-- Topic pills -->
-      <div class="discord-pills">
-        <span class="discord-pill">Web Dev</span>
-        <span class="discord-pill">AI & ML</span>
-        <span class="discord-pill">UI Design</span>
-        <span class="discord-pill">Open Source</span>
-        <span class="discord-pill">Career Advice</span>
-        <span class="discord-pill">DSA Help</span>
-        <span class="discord-pill">Cloud & DevOps</span>
-        <span class="discord-pill">Startup Talk</span>
-      </div>
-
-      <!-- CTA -->
-      <div class="discord-cta-group">
-        <a href="https://discord.gg/hyna" target="_blank" rel="noopener" class="btn-discord" id="discord-join-btn">
-          <!-- Discord SVG logo -->
-          <svg width="22" height="22" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M60.104 4.583A58.614 58.614 0 0 0 45.12.52a.219.219 0 0 0-.232.11 40.784 40.784 0 0 0-1.8 3.698c-5.487-.823-10.944-.823-16.318 0a37.376 37.376 0 0 0-1.827-3.698.228.228 0 0 0-.232-.11 58.47 58.47 0 0 0-14.985 4.063.207.207 0 0 0-.095.082C1.577 18.956-.968 32.86.302 46.59a.244.244 0 0 0 .093.166c6.299 4.624 12.405 7.43 18.396 9.283a.23.23 0 0 0 .25-.082 42.08 42.08 0 0 0 3.627-5.9.225.225 0 0 0-.123-.312 38.772 38.772 0 0 1-5.539-2.64.228.228 0 0 1-.022-.377c.372-.279.744-.569 1.1-.862a.22.22 0 0 1 .23-.031c11.62 5.305 24.198 5.305 35.681 0a.219.219 0 0 1 .232.028c.356.293.728.586 1.103.865a.228.228 0 0 1-.02.377 36.384 36.384 0 0 1-5.543 2.637.226.226 0 0 0-.12.315 47.249 47.249 0 0 0 3.623 5.897.226.226 0 0 0 .25.085c6.015-1.853 12.122-4.66 18.42-9.283a.228.228 0 0 0 .092-.163c1.535-15.884-2.57-29.675-10.876-41.925a.18.18 0 0 0-.092-.085ZM23.725 38.14c-3.517 0-6.415-3.228-6.415-7.192 0-3.965 2.844-7.193 6.415-7.193 3.598 0 6.468 3.255 6.415 7.193 0 3.964-2.844 7.192-6.415 7.192Zm23.704 0c-3.516 0-6.415-3.228-6.415-7.192 0-3.965 2.845-7.193 6.415-7.193 3.6 0 6.468 3.255 6.415 7.193 0 3.964-2.815 7.192-6.415 7.192Z"
-              fill="currentColor" />
-          </svg>
-          Join Our Discord
-        </a>
-
-
-      </div>
-  </section>
-  <link rel="stylesheet" href="hack.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <section class="hero">
-
-    <!-- Spinning Hyna Logo -->
-    <div class="logo-wrapper">
-      <div class="logo-ring">
-        <img src="./hyna-logo-new.png" alt="Hyna Connect Logo" class="hyna-logo">
-      </div>
-    </div>
-
-    <h1>
-      HYNA HACKATHON 2026
-    </h1>
-
-    <p>
-      Innovate. Build. Launch.
-      Join the biggest student hackathon conducted by
-      Hyna Connect.
-    </p>
-
-    <a href="./hack.html" class="register-btn">
-      Register Now
-    </a>
-
-  </section>
   <script>
     // ---------- Header scroll state ----------
     const nav = document.querySelector('nav');
@@ -2014,35 +1441,7 @@
       opacity: 0, y: 24, duration: 0.6, stagger: 0.06, ease: 'power2.out'
     });
 
-    // ---------- Discord section animations ----------
-    gsap.from('.discord-badge', {
-      scrollTrigger: { trigger: '.discord-section', start: 'top 80%' },
-      opacity: 0, y: -16, duration: 0.5, ease: 'power2.out'
-    });
-    gsap.from('.discord-heading', {
-      scrollTrigger: { trigger: '.discord-section', start: 'top 75%' },
-      opacity: 0, y: 32, duration: 0.8, ease: 'power3.out', delay: 0.1
-    });
-    gsap.from('.discord-sub', {
-      scrollTrigger: { trigger: '.discord-section', start: 'top 70%' },
-      opacity: 0, y: 20, duration: 0.7, ease: 'power2.out', delay: 0.2
-    });
-    gsap.from('.discord-stat', {
-      scrollTrigger: { trigger: '.discord-stats', start: 'top 85%' },
-      opacity: 0, y: 20, duration: 0.5, stagger: 0.1, ease: 'power2.out'
-    });
-    gsap.from('.discord-channel-card', {
-      scrollTrigger: { trigger: '.discord-channels', start: 'top 85%' },
-      opacity: 0, y: 28, duration: 0.55, stagger: 0.08, ease: 'power2.out'
-    });
-    gsap.from('.discord-pill', {
-      scrollTrigger: { trigger: '.discord-pills', start: 'top 90%' },
-      opacity: 0, scale: 0.85, duration: 0.4, stagger: 0.05, ease: 'back.out(1.4)'
-    });
-    gsap.from('.btn-discord', {
-      scrollTrigger: { trigger: '.discord-cta-group', start: 'top 90%' },
-      opacity: 0, y: 20, scale: 0.95, duration: 0.6, ease: 'power3.out'
-    });
+
 
 
 
@@ -2283,10 +1682,10 @@
         <h4>Navigate</h4>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">Why Us</a></li>
-          <li><a href="#learning">Learning</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#community">Community</a></li>
+          <li><a href="why-choose.html">Why Us</a></li>
+          <li><a href="learning.html">Learning</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -2294,23 +1693,19 @@
       <div class="footer-col">
         <h4>Programs</h4>
         <ul>
-          <li><a href="#learning">Skill Tracks</a></li>
-          <li><a href="#learning">Hackathons</a></li>
-          <li><a href="#community">Mentorship</a></li>
-          <li><a href="#events">Workshops</a></li>
-          <li><a href="#learning">Internships</a></li>
+          <li><a href="learning.html">Skill Tracks</a></li>
+          <li><a href="community.html">Mentorship</a></li>
+          <li><a href="events.html">Workshops</a></li>
+          <li><a href="learning.html">Internships</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Connect</h4>
         <ul>
-          <li><a href="https://discord.gg/hyna" target="_blank" rel="noopener">Discord Community</a></li>
           <li><a href="mailto:team.hynastudio@gmail.com">Email Us</a></li>
         </ul>
         <div class="footer-social">
-          <a href="https://discord.gg/hyna" target="_blank" rel="noopener" aria-label="Discord"><i
-              class="fab fa-discord"></i></a>
           <a href="mailto:team.hynastudio@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>

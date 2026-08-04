@@ -877,6 +877,26 @@
       text-shadow: none;
     }
 
+    /* ---- Hero logo above tagline ---- */
+    .hero-logo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .hero-logo {
+      height: 80px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.15));
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    .hero-logo:hover {
+      filter: drop-shadow(0 0 28px rgba(255, 255, 255, 0.3));
+      transform: scale(1.04);
+    }
+
     .hero p.sub {
       margin: 26px auto 0;
       max-width: 560px;
@@ -1313,6 +1333,10 @@
 
     <div class="hero-grid-overlay"></div>
     <div class="container hero-content">
+
+      <div class="hero-logo-wrap">
+        <img src="./hyna-logo-new.png" alt="Hyna LearningHub" class="hero-logo">
+      </div>
 
       <h1 id="hero-heading">
         <span class="word"><span class="hero-tagline">Together We Learn. Together We Lead.</span></span>

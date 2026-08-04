@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600;1,700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
@@ -853,6 +853,30 @@
       color: transparent;
     }
 
+    /* ---- Stylish tagline font ---- */
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(44px, 6.5vw, 96px);
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+      background: linear-gradient(
+        180deg,
+        #d4d4d4 0%,
+        #ffffff 28%,
+        #c8cdd5 55%,
+        #8a929e 75%,
+        #e8eaed 100%
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-size: 100% 100%;
+      display: inline-block;
+      text-shadow: none;
+    }
+
     .hero p.sub {
       margin: 26px auto 0;
       max-width: 560px;
@@ -1291,7 +1315,7 @@
     <div class="container hero-content">
 
       <h1 id="hero-heading">
-        <span class="word"><span>Together We Learn. Together We Lead.</span></span>
+        <span class="word"><span class="hero-tagline">Together We Learn. Together We Lead.</span></span>
         <span class="word small"><span>community driven by students, for students</span></span>
 
       </h1>

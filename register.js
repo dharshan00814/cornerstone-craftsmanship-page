@@ -70,29 +70,40 @@ form.addEventListener("submit", async (e) => {
         .getPublicUrl(resumeName).data.publicUrl;
     }
 
-    const { error } = await supabase.from("student_registrations").insert([
-      {
-        full_name: fullName,
-        email: email,
-        phone: phone,
-        dob: dob || null,
-        gender: gender,
-        college_name: college,
-        department: department,
-        year_of_study: year,
-        student_id: studentId,
-        skills: skills,
-        experience_level: experienceLevel,
-        programming_languages: programmingLanguages,
-        about: about,
-        linkedin: linkedin,
-        github: github,
-        portfolio: portfolio,
-        profile_photo: profilePhotoURL,
-        resume: resumeURL,
-        agreed: agreed,
-      },
-    ]);
+    const { data, error } = await supabase
+  .from("student_registrations")
+  .insert([
+    {
+      full_name: fullName,
+      email: email,
+      phone: phone,
+      dob: dob || null,
+      gender: gender,
+      college_name: college,
+      department: department,
+      year_of_study: year,
+      student_id: studentId,
+      skills: skills,
+      experience_level: experienceLevel,
+      programming_languages: programmingLanguages,
+      about: about,
+      linkedin: linkedin,
+      github: github,
+      portfolio: portfolio,
+      profile_photo: profilePhotoURL,
+      resume: resumeURL,
+      agreed: agreed,
+    },
+  ])
+  .select();
+
+console.log("DATA:", data);
+console.log("ERROR:", error);
+
+if (error) {
+  console.error(error);
+  alert(error.message);
+}
 
     if (error) throw error;
 

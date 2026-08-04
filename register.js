@@ -1,5 +1,3 @@
-// Initialize EmailJS
-emailjs.init("YOUR_PUBLIC_KEY");
 
 // Form
 const form = document.getElementById("registerForm");
@@ -12,6 +10,11 @@ const anotherBtn = document.getElementById("viewAnotherBtn");
 
 form.addEventListener("submit", async function (e) {
     e.preventDefault();
+
+    const submitBtn = form.querySelector("button");
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
 
     // Get Selected Skills
     const skills = [...document.querySelectorAll(".skillCheck:checked")]
@@ -31,7 +34,7 @@ form.addEventListener("submit", async function (e) {
         year: document.getElementById("year").value,
         studentId: document.getElementById("studentId").value,
 
-        skills: skills,
+        skills: skills || "Not selected",
 
         experienceLevel: document.getElementById("experienceLevel").value,
         programmingLanguages: document.getElementById("programmingLanguages").value,
@@ -43,105 +46,59 @@ form.addEventListener("submit", async function (e) {
         portfolio: document.getElementById("portfolio").value
     };
 
+    const emailData = {
+        _subject: `New HYNA Registration - ${data.fullName}`,
+        name: data.fullName,
+        email: data.email,
+        phone: data.phone,
+        dateOfBirth: data.dob,
+        gender: data.gender,
+        college: data.college,
+        department: data.department,
+        yearOfStudy: data.year,
+        studentId: data.studentId,
+        skills: data.skills,
+        experienceLevel: data.experienceLevel,
+        programmingLanguages: data.programmingLanguages,
+        about: data.about,
+        linkedin: data.linkedin,
+        github: data.github,
+        portfolio: data.portfolio
+    };
+
     try {
+        const response = await fetch("https://formsubmit.co/ajax/jdharshan2@gmail.com", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(emailData)
+        });
 
-        // Send Email
-        await emailjs.send(
-            "YOUR_SERVICE_ID",
-            "YOUR_TEMPLATE_ID",
-            data
-        );
+        if (!response.ok) {
+            throw new Error("Email sending failed");
+        }
 
-        // Show Details in Modal
         details.innerHTML = `
-            <div class="detail-row">
-                <div class="label">Full Name</div>
-                <div class="value">${data.fullName}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Email</div>
-                <div class="value">${data.email}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Phone</div>
-                <div class="value">${data.phone}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Date of Birth</div>
-                <div class="value">${data.dob}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Gender</div>
-                <div class="value">${data.gender}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">College</div>
-                <div class="value">${data.college}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Department</div>
-                <div class="value">${data.department}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Year</div>
-                <div class="value">${data.year}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Student ID</div>
-                <div class="value">${data.studentId}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Skills</div>
-                <div class="value">${data.skills}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Experience</div>
-                <div class="value">${data.experienceLevel}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Programming Languages</div>
-                <div class="value">${data.programmingLanguages}</div>
-            </div>
-
-            <div class="detail-row full">
-                <div class="label">Why Join HYNA</div>
-                <div class="value">${data.about}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">LinkedIn</div>
-                <div class="value">${data.linkedin}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">GitHub</div>
-                <div class="value">${data.github}</div>
-            </div>
-
-            <div class="detail-row">
-                <div class="label">Portfolio</div>
-                <div class="value">${data.portfolio}</div>
-            </div>
+            <div class="detail-row"><span class="label">Name</span><span class="value">${data.fullName}</span></div>
+            <div class="detail-row"><span class="label">Email</span><span class="value">${data.email}</span></div>
+            <div class="detail-row"><span class="label">Phone</span><span class="value">${data.phone}</span></div>
+            <div class="detail-row"><span class="label">College</span><span class="value">${data.college}</span></div>
+            <div class="detail-row"><span class="label">Department</span><span class="value">${data.department}</span></div>
+            <div class="detail-row"><span class="label">Year</span><span class="value">${data.year}</span></div>
+            <div class="detail-row full"><span class="label">Skills</span><span class="value">${data.skills}</span></div>
+            <div class="detail-row full"><span class="label">About</span><span class="value">${data.about}</span></div>
         `;
 
         modal.classList.add("active");
-
         form.reset();
-
     } catch (error) {
+        alert("Sorry, your registration could not be sent. Please try again.");
         console.error(error);
-        alert("Unable to send registration.");
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
     }
 });
 

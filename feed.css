@@ -863,6 +863,11 @@ footer span {
     }
 
 
+    .hero-content {
+        justify-content: center;
+    }
+
+
     .brand h1 {
         font-size: 34px;
     }
@@ -883,6 +888,15 @@ footer span {
         height: 60px;
 
         font-size: 40px;
+
+        overflow: hidden;
+    }
+
+
+    .hyna {
+        margin-left: 0;
+
+        width: 38px;
     }
 
 
@@ -960,8 +974,32 @@ footer span {
     }
 
 
+    .brand {
+        gap: 12px;
+    }
+
+
+    .brand h1 {
+        font-size: 26px;
+    }
+
+
+    .brand h2 {
+        font-size: 17px;
+    }
+
+
     .form-card {
         padding: 16px;
+    }
+
+
+    .stars {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 8px;
     }
 
 
